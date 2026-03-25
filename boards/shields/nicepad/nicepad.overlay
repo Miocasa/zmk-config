@@ -60,7 +60,7 @@
         // Если у тебя активный высокий уровень — поменяй на GPIO_ACTIVE_HIGH
     };
     encoder0: encoder {
-        compatible = "alps,ec11";
+        compatible = "alps,ec11";kcfkcfkcfmbebemmbembembedadzadmbembe
         label = "encoder_0";
         a-gpios = <&xiao_d 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;  // твой пин A
         b-gpios = <&xiao_d 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;  // твой пин B
