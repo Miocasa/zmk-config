@@ -17,5 +17,30 @@
                 &kp D    &kp E    &kp F
             >;
         };
+        base {
+            display-name = "Base";
+            bindings = <
+                &kp Z    &kp M    &kp K
+                &kp A    &kp B    &kp C
+                &kp D    &kp E    &kp F
+            >;
+        };
+
+        fn_layer {
+            display-name = "Fn";
+            bindings = <
+                &kp Z    &kp M    &kp K
+                &kp A    &kp B    &kp C
+                &kp D    &kp E    &kp F
+            >;
+        };
+
+        extra1 {
+            status = "reserved";
+        };
+
+        extra2 {
+            status = "reserved";
+        };
     };
 };
