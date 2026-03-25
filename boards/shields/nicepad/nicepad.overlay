@@ -36,13 +36,6 @@
             , <&xiao_d 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             ;
     };
-    encoder_btn_kscan: kscan_encoder_btn {
-        compatible = "zmk,kscan-gpio-direct";
-        wakeup-source;
-
-        input-gpios = <&xiao_d 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;  // D3
-        // Если у тебя активный высокий уровень — поменяй на GPIO_ACTIVE_HIGH
-    };
 
     default_transform: default_transform {
         // See https://zmk.dev/docs/development/hardware-integration/new-shield#matrix-transform
@@ -57,11 +50,20 @@
             RC(2, 0) RC(2, 1) RC(2, 2)
         >;
     };
+
+    //?Encoder
+    encoder_btn_kscan: kscan_encoder_btn {
+        compatible = "zmk,kscan-gpio-direct";
+        wakeup-source;
+
+        input-gpios = <&xiao_d 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;  // D3
+        // Если у тебя активный высокий уровень — поменяй на GPIO_ACTIVE_HIGH
+    };
     encoder0: encoder {
         compatible = "alps,ec11";
         label = "encoder_0";
-        a-gpios = <&xiao_d X (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;  // твой пин A
-        b-gpios = <&xiao_d Y (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;  // твой пин B
+        a-gpios = <&xiao_d 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;  // твой пин A
+        b-gpios = <&xiao_d 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;  // твой пин B
         steps = <80>;   // или 30/20 — зависит от энкодера
         status = "okay";
     };
